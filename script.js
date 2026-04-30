@@ -16,10 +16,15 @@ document.querySelectorAll('section').forEach(section => {
   observer.observe(section);
 });
 
-function setSkill(el) {
-  document.querySelectorAll('.skill-card').forEach(c => {
-    c.classList.remove('active');
+function setSkill(el, title, desc, project) {
+  document.querySelectorAll('.skill-card').forEach(card => {
+    card.classList.remove('active');
   });
 
   el.classList.add('active');
+
+  // update isi (biar feel "pindah ke atas")
+  el.querySelector('.skill-title').innerText = title;
+  el.querySelector('.skill-desc').innerText = desc;
+  el.querySelector('.skill-project').innerText = project;
 }
