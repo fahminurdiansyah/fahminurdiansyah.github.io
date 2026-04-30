@@ -1,103 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Portofolio Saya</title>
-
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b1020;
-    color: white;
-    scroll-behavior: smooth;
-  }
-
-  /* NAVBAR */
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(17, 24, 39, 0.9);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 12px;
-    z-index: 1000;
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: 0.2s;
-  }
-
-  nav a:hover {
-    background: #2563eb;
-  }
-
-  html {
-    scroll-padding-top: 70px;
-  }
-
-  /* SECTION BASE */
-  section {
-    min-height: 100vh;
-    padding: 90px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* CARD CONTAINER */
-  .container {
-    max-width: 800px;
-    width: 90%;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-  }
-
-  .container.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
-  }
-
-  .card {
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    margin: 10px auto;
-    border-radius: 12px;
-  }
-
-  .tag {
-    display: inline-block;
-    background: #2563eb;
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 8px;
-    font-size: 12px;
-  }
-
-  /* BACKGROUND VARIATION */
-  #home   { background: linear-gradient(135deg, #111827, #0b1020); }
-  #about  { background: linear-gradient(135deg, #0f172a, #111827); }
-  #skill  { background: linear-gradient(135deg, #0b1020, #1f2937); }
-  #project{ background: linear-gradient(135deg, #111827, #0f172a); }
-  #contact{ background: linear-gradient(135deg, #0b1020, #111827); }
-
-</style>
+  <meta charset="UTF-8">
+  <title>Portofolio Saya</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -166,22 +72,7 @@
   </div>
 </section>
 
-<!-- ANIMATION SCRIPT -->
-<script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.querySelector('.container').classList.add('show');
-      } else {
-        entry.target.querySelector('.container').classList.remove('show');
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('section').forEach(sec => {
-    observer.observe(sec);
-  });
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
