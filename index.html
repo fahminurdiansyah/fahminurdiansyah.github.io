@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio Game Mode</title>
+  <title>Portofolio Saya</title>
 
   <style>
     body {
@@ -10,145 +10,118 @@
       font-family: Arial, sans-serif;
       background: #0b1020;
       color: white;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
-    .screen {
-      display: none;
-      padding: 60px 20px;
-    }
-
-    .active {
-      display: block;
+    .hero {
+      background: #111827;
     }
 
     h1 {
-      font-size: 42px;
+      font-size: 48px;
       margin-bottom: 10px;
     }
 
     .btn {
-      display: block;
-      margin: 10px auto;
       padding: 12px 20px;
-      width: 200px;
       background: #2563eb;
       border: none;
       border-radius: 10px;
       color: white;
       cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      background: #1d4ed8;
-      transform: scale(1.05);
+      text-decoration: none;
+      margin-top: 15px;
     }
 
     .card {
       background: #1f2937;
       padding: 20px;
-      margin: 15px auto;
-      max-width: 500px;
+      margin: 10px;
       border-radius: 12px;
+      width: 80%;
+      max-width: 600px;
     }
 
-    .back {
-      margin-top: 20px;
-      background: #374151;
+    .tag {
+      display: inline-block;
+      background: #2563eb;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 8px;
+      font-size: 12px;
     }
   </style>
+
 </head>
 
 <body>
 
-<!-- START SCREEN -->
-<div id="start" class="screen active">
-
-  <h1 style="font-size: 48px;">PORTOFOLIO GAME</h1>
+<!-- HERO -->
+<section class="hero">
+  <h1>PORTOFOLIO SAYA</h1>
 
   <div style="
     border: 3px solid white;
-    width: 320px;
-    height: 220px;
-    margin: 20px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 300px;
+    height: 200px;
+    margin: 20px 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   ">
-    <img src="https://images.squarespace-cdn.com/content/v1/607f89e638219e13eee71b1e/1684821560422-SD5V37BAG28BURTLIXUQ/michael-sum-LEpfefQf4rU-unsplash.jpg"
-         style="max-width: 100%; max-height: 100%;" />
+    <img src="https://via.placeholder.com/280x180" style="max-width:100%; max-height:100%;" />
   </div>
 
-  <p>Tekan START untuk masuk</p>
-
-  <button class="btn" onclick="go('menu')">START</button>
-
-</div>
-
-<!-- MENU -->
-<div id="menu" class="screen">
-  <h1>MAIN MENU</h1>
-
-  <button class="btn" onclick="go('about')">👤 ABOUT</button>
-  <button class="btn" onclick="go('skill')">🎒 SKILL (Inventory)</button>
-  <button class="btn" onclick="go('project')">🗺 PROJECT (Quest)</button>
-  <button class="btn" onclick="go('contact')">💾 CONTACT</button>
-</div>
+  <p>Scroll ke bawah untuk mulai 🚀</p>
+  <a class="btn" href="#about">START</a>
+</section>
 
 <!-- ABOUT -->
-<div id="about" class="screen">
+<section id="about">
   <h1>ABOUT</h1>
   <div class="card">
-    Saya adalah seseorang yang suka belajar dan membangun hal baru secara sederhana.
+    Saya adalah seseorang yang suka belajar, membangun hal baru, dan berkembang secara perlahan.
   </div>
-  <button class="btn back" onclick="go('menu')">⬅ Back</button>
-</div>
+</section>
 
 <!-- SKILL -->
-<div id="skill" class="screen">
-  <h1>INVENTORY</h1>
-  <div class="card">🧠 Microsoft Word</div>
-  <div class="card">📊 Excel</div>
-  <div class="card">🎬 Editing</div>
-  <div class="card">📦 Operasional</div>
-
-  <button class="btn back" onclick="go('menu')">⬅ Back</button>
-</div>
+<section id="skill">
+  <h1>SKILL</h1>
+  <div class="card">
+    <span class="tag">Microsoft Word</span>
+    <span class="tag">Excel</span>
+    <span class="tag">Editing</span>
+    <span class="tag">Operasional</span>
+  </div>
+</section>
 
 <!-- PROJECT -->
-<div id="project" class="screen">
-  <h1>QUEST</h1>
+<section id="project">
+  <h1>PROJECT</h1>
   <div class="card">
-    🧩 Project 1: Portofolio sederhana ini
+    🧩 Portofolio pertama ini<br>
+    🚧 Project lainnya menyusul
   </div>
-
-  <div class="card">
-    🚧 Project 2: (akan ditambahkan)
-  </div>
-
-  <button class="btn back" onclick="go('menu')">⬅ Back</button>
-</div>
+</section>
 
 <!-- CONTACT -->
-<div id="contact" class="screen">
-  <h1>SAVE POINT</h1>
+<section id="contact">
+  <h1>CONTACT</h1>
   <div class="card">
-    WhatsApp: 08xxxxxx <br>
+    WhatsApp: 08xxxxxx<br>
     Email: kamu@email.com
   </div>
-
-  <button class="btn back" onclick="go('menu')">⬅ Back</button>
-</div>
-
-<script>
-  function go(page) {
-    let screens = document.querySelectorAll('.screen');
-    screens.forEach(s => s.classList.remove('active'));
-
-    document.getElementById(page).classList.add('active');
-  }
-</script>
+</section>
 
 </body>
 </html>
