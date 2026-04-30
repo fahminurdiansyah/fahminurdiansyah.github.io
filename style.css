@@ -93,3 +93,59 @@ h1 {
 #skill  { background: linear-gradient(135deg, #0b1020, #1f2937); }
 #project{ background: linear-gradient(135deg, #111827, #0f172a); }
 #contact{ background: linear-gradient(135deg, #0b1020, #111827); }
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.skill-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  min-height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  background: rgba(37,99,235,0.2);
+}
+
+.skill-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.skill-desc,
+.skill-project {
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s;
+}
+
+/* ACTIVE STATE */
+.skill-card.active {
+  background: rgba(37,99,235,0.25);
+  transform: scale(1.05);
+}
+
+.skill-card.active .skill-title {
+  font-size: 18px;
+  color: #60a5fa;
+}
+
+.skill-card.active .skill-desc,
+.skill-card.active .skill-project {
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 8px;
+}
